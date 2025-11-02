@@ -29,7 +29,8 @@ struct MinHeap {
         }
         int popped = data[0];
 
-        data[0] == data[size -1];
+        data[0] = data[size - 1];
+        size = size - 1;
         downheap(0, weightArr);
 
         return popped; // placeholder

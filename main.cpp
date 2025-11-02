@@ -119,6 +119,7 @@ int buildEncodingTree(int nextFree) {
         rightArr[nextFree] = pop2;
         nextFree++;
     }
+    cout << "Tree created!" << endl;
     return heap.pop(weightArr); // placeholder
 }
 
@@ -131,8 +132,10 @@ void generateCodes(int root, string codes[]) {
     stack<pair<int, string>> s;
     s.push({root, ""});
 
-
-
+    // in this loop the root of the tree gets its index and the code that has been built
+    // so far. Then, because it's a stack, the top gets removed. After we check if it
+    // was a leaf. If it is then we add the built-up code to the string array at that
+    // letter's index using the charArr array. If it is not a leaf, then depending on
     while (!(s.empty())) {
         int node = s.top().first;
         string code = s.top().second;
@@ -145,7 +148,7 @@ void generateCodes(int root, string codes[]) {
             s.push({rightArr[node], code + "1"});
         }
     }
-
+     cout<< "Codes generated!" << endl;
 }
 
 // Step 5: Print table and encoded message
