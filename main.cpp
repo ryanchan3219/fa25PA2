@@ -103,7 +103,8 @@ int buildEncodingTree(int nextFree) {
         heap.push(i, weightArr);
     }
 
-
+    // As instructed, pops the two smallest nodes and creates the parent nodes until
+    // the tree is just a root.
     while (heap.size > 1) {
         int pop1 = heap.pop(weightArr);
         int pop2 = heap.pop(weightArr);
